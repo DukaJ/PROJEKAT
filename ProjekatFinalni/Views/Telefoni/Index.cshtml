@@ -5,10 +5,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Telefoni</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Dodaj novi", "Create")
 </p>
 <table class="table">
     <tr>
@@ -43,9 +43,8 @@
                 @Html.DisplayFor(modelItem => item.KontaktID)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Izmeni", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Obriši", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
       
@@ -53,3 +52,6 @@
 
 </table>
 
+<P STYLE="text-align:right">
+    <a href="javascript:window.print()">Odštampaj stranicu</a>
+</P>
