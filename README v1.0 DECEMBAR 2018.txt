@@ -2,123 +2,123 @@
 README v1.0 / DECEMBAR 2018.
 ***************************************************************
 
-# Projekat škola
+# Projekat Å¡kola
 
 ## Uvod (Introduction)
 
-Projekat škola predstavlja veb aplikaciju uz pomoæ koje korisnici mogu, u zavisnosti od nivoa pristupa, izvršavati neke osnovne komande (unos, izmena, brisanje, štampanje..) nad formom koja sadri informacije o školama i njenim kontaktima.
+Projekat Å¡kola predstavlja veb aplikaciju uz pomoÄ‡ koje korisnici mogu, u zavisnosti od nivoa pristupa, izvrÅ¡avati neke osnovne komande (unos, izmena, brisanje, Å¡tampanje..) nad formom koja sadrÅ¾i informacije o Å¡kolama i njenim kontaktima.
 
 https://imgur.com/uNd8DS3
 
-PRE NEGO ŠTO POÈNETE, NEOPHODNO JE DA PROÈITATE UPUTSTVA!!!
+PRE NEGO Å TO POÄŒNETE, NEOPHODNO JE DA PROÄŒITATE UPUTSTVA!!!
 
 
 
 
 ## Uputstva (Guide instructions)
 
-*** VANO *** VANO *** VANO *** VANO *** VANO *** VANO ***
-*** VANO *** VANO *** VANO *** VANO *** VANO *** VANO ***
+*** VAÅ½NO *** VAÅ½NO *** VAÅ½NO *** VAÅ½NO *** VAÅ½NO *** VAÅ½NO ***
+*** VAÅ½NO *** VAÅ½NO *** VAÅ½NO *** VAÅ½NO *** VAÅ½NO *** VAÅ½NO ***
 
-1. Preuzmite repozitorijum pod nazivom "PROJEKAT" na GitHub-u.
+1. Preuzmite repozitorijum pod nazivom "PROJEKAT" na GitHub-u (Clone or download - DOWNLOAD ZIP).
 
-2. Nakon što preuzmete repozitorijum "PROJEKAT", neophodno je da iz foldera "Baza podataka", oba fajla (BazaProjekat.mdf i BazaProjekat_log.ldf) prebacite/kopirate u Vaš DATA folder MS SQL Servera,a on se obièno nalazi u: C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA
+2. Nakon Å¡to preuzmete repozitorijum "PROJEKAT", neophodno je da iz foldera "Baza podataka", oba fajla (BazaProjekat.mdf i BazaProjekat_log.ldf) prebacite/kopirate u VaÅ¡ DATA folder MS SQL Servera,a on se obiÄno nalazi u: C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA
 
-3. Nakon što ste to uradili, pokrenite MS SQL Server
- - Desni klik na DATABASES u padajuæem meniju ispod imena Vaše baze u "Object Exploreru" i kliknite na "ATTACH"
+3. Nakon Å¡to ste to uradili, pokrenite MS SQL Server
+ - Desni klik na DATABASES u padajuÄ‡em meniju ispod imena VaÅ¡e baze u "Object Exploreru" i kliknite na "ATTACH"
  - Nakon toga Vam se otvori prozor "Attach databases" i u njemu "Databases to Attach" kliknite na dugme za dodavanje  --- > "Add" <---
- - Trebalo bi da Vam se otvori po default-u DATA folder gde ste prebacili neophodne fajlove (BazaProjekat.mdf i BazaProjekat_log.ldf), a ako se kojim sluèajem nije otvorio, pronağite ga sami na : C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA
- - OBELEITE FAJL BazaProjekat.mdf i kliknite "Ok".
+ - Trebalo bi da Vam se otvori po default-u DATA folder gde ste prebacili neophodne fajlove (BazaProjekat.mdf i BazaProjekat_log.ldf), a ako se kojim sluÄajem nije otvorio, pronaÄ‘ite ga sami na : C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA
+ - OBELEÅ½ITE FAJL BazaProjekat.mdf i kliknite "Ok".
 
-4. Uspešno ste ubacili bazu neophodnu za ovaj projekat, ostalo je još samo da u samom projektu u Microsoft Visual Studiu, postavite vaše ime baze, a to æete uraditi na sledeæi naèin.
+4. UspeÅ¡no ste ubacili bazu neophodnu za ovaj projekat, ostalo je joÅ¡ samo da u samom projektu u Microsoft Visual Studiu, postavite vaÅ¡e ime baze, a to Ä‡ete uraditi na sledeÄ‡i naÄin.
 
 5. Pokrenite fajl/solution "ProjekatFinalni.sln"
 
-6. Nakon što Vam se otvori, na DNU prozora "Solution Explorer", stajaæe fajl Web.config, otvorite ga.
+6. Nakon Å¡to Vam se otvori, na DNU prozora "Solution Explorer", stajaÄ‡e fajl Web.config, otvorite ga.
 
-7. Izmedju <connectionStrings></connectionStrings>, treba da pronağete "data source = DUKA" i umesto imena naše baze "DUKA", postavite ime Vaše Baze (Videti u MS SQL Serveru u "Object Exploreru"). Ponovite to svuda gde piše "data source = DUKA". 
+7. Izmedju <connectionStrings></connectionStrings>, treba da pronaÄ‘ete "data source = DUKA" i umesto imena naÅ¡e baze "DUKA", postavite ime VaÅ¡e Baze (Videti u MS SQL Serveru u "Object Exploreru"). Ponovite to svuda gde piÅ¡e "data source = DUKA". 
 
 **PrtScr** https://imgur.com/a/DMibANp 
 
-8. Nakon što ste završili sve navedene stavke, pokušajte da pokrenete aplikaciju CTRL + F5.
+8. Nakon Å¡to ste zavrÅ¡ili sve navedene stavke, pokuÅ¡ajte da pokrenete aplikaciju CTRL + F5.
 
-9. U sluèaju da aplikacija radi normalno, nastavite sa èitanjem "Naèina korišæenja". Ukoliko ne radi, proèitajte "Pomoæ".
+9. U sluÄaju da aplikacija radi normalno, nastavite sa Äitanjem "NaÄina koriÅ¡Ä‡enja". Ukoliko ne radi, proÄitajte "PomoÄ‡".
 
-*** VANO *** VANO *** VANO *** VANO *** VANO *** VANO ***
-*** VANO *** VANO *** VANO *** VANO *** VANO *** VANO ***
+*** VAÅ½NO *** VAÅ½NO *** VAÅ½NO *** VAÅ½NO *** VAÅ½NO *** VAÅ½NO ***
+*** VAÅ½NO *** VAÅ½NO *** VAÅ½NO *** VAÅ½NO *** VAÅ½NO *** VAÅ½NO ***
 
 
 
-## Naèin korišæenja (Usage instructions)
+## NaÄin koriÅ¡Ä‡enja (Usage instructions)
 
 1. Pokretanje aplikacije
 
-- Nakon što ste pokrenuli aplikaciju, pojaviæe vam se poèetna stranica koja daje kratak opis o veb aplikaciji, nastavite dalje klikom na dugme "Zapoèni>>", naredna stvar koja æe se pokrenuti je stranica za prijavu, ukoliko se veæ niste registrovali, morate to uèiniti klikom na link "Registracija".
+- Nakon Å¡to ste pokrenuli aplikaciju, pojaviÄ‡e vam se poÄetna stranica koja daje kratak opis o veb aplikaciji, nastavite dalje klikom na dugme "ZapoÄni>>", naredna stvar koja Ä‡e se pokrenuti je stranica za prijavu, ukoliko se veÄ‡ niste registrovali, morate to uÄiniti klikom na link "Registracija".
 
 2. Registracija
 
-- Jedan od vanijih koraka pri korišæenju aplikacije je "Registracija". U prostor namenjen za unos podataka, unesite "Korisnièko ime", kratko ime koje æete koristiti kada se budete prijavljivali. Sledeæa stavka je "Lozinka", paljivo odaberite Vašu lozinku, savetujemo Vam da sadri minimum 8 cifara, koristite mešavinu velikih i malih slova kao i brojeva. Sledi odabir vrste naloga koji elite da koristite u skladu sa tim kakav stepen pristupa elite:
+- Jedan od vaÅ¾nijih koraka pri koriÅ¡Ä‡enju aplikacije je "Registracija". U prostor namenjen za unos podataka, unesite "KorisniÄko ime", kratko ime koje Ä‡ete koristiti kada se budete prijavljivali. SledeÄ‡a stavka je "Lozinka", paÅ¾ljivo odaberite VaÅ¡u lozinku, savetujemo Vam da sadrÅ¾i minimum 8 cifara, koristite meÅ¡avinu velikih i malih slova kao i brojeva. Sledi odabir vrste naloga koji Å¾elite da koristite u skladu sa tim kakav stepen pristupa Å¾elite:
 
-** Admin ** Poseduje maksimalan pristup podacima, i sa njim æete moæi da imate totalnu kontrolu nad podacima veb aplikacije, kako nad informacijama o školama, tako i nad registrovanim korisnicima.
+** Admin ** Poseduje maksimalan pristup podacima, i sa njim Ä‡ete moÄ‡i da imate totalnu kontrolu nad podacima veb aplikacije, kako nad informacijama o Å¡kolama, tako i nad registrovanim korisnicima.
 
-** Gost ** Ima moguænost pregleda škola i informacijama o njima, kao i opciju za štampanje potrebnih informacija, ostale moguænosti su za njega zakljuèane.
+** Gost ** Ima moguÄ‡nost pregleda Å¡kola i informacijama o njima, kao i opciju za Å¡tampanje potrebnih informacija, ostale moguÄ‡nosti su za njega zakljuÄane.
 
-** Pravo za unos "" Ova vrsta naloga Vam omoguæava, izmenu informacija o postojeæim školama, kao i moguænost kreiranja nove i naravno moguænost štampanja stranice.
+** Pravo za unos "" Ova vrsta naloga Vam omoguÄ‡ava, izmenu informacija o postojeÄ‡im Å¡kolama, kao i moguÄ‡nost kreiranja nove i naravno moguÄ‡nost Å¡tampanja stranice.
 
-Da bi se uspešno registrovali, kliknite na "Kreiraj".
+Da bi se uspeÅ¡no registrovali, kliknite na "Kreiraj".
 
 3. Prijava
 
-- Nakon što ste se registrovali, neophodno je da se prijavite. Unesite korisnièko ime koje ste izabrali kao i lozinku za validaciju i kliknite "Prijavi se".
+- Nakon Å¡to ste se registrovali, neophodno je da se prijavite. Unesite korisniÄko ime koje ste izabrali kao i lozinku za validaciju i kliknite "Prijavi se".
 
-4. Lista škola
+4. Lista Å¡kola
 
-- Ako je prijava bila uspešna, pojaviæe se Vaše korisnièko ime u gornjem desnom æošku,a prva stranica koja æe nakon prijave biti pokrenuta je "Lista škola". Na kojoj se nalaze nazivi škola i informacije o njima, naravno ukoliko postoji neka škola uneta u bazu podataka. Ukoliko ste napravili nalog sa nivoom pristupa "Admin" ili "Pravo za unos" imaæete moguænost dodavanja nove škole, a "Admin" takoğe moe da menja informacije o veæ postojeæim školama kao i da ih briše. 
+- Ako je prijava bila uspeÅ¡na, pojaviÄ‡e se VaÅ¡e korisniÄko ime u gornjem desnom Ä‡oÅ¡ku,a prva stranica koja Ä‡e nakon prijave biti pokrenuta je "Lista Å¡kola". Na kojoj se nalaze nazivi Å¡kola i informacije o njima, naravno ukoliko postoji neka Å¡kola uneta u bazu podataka. Ukoliko ste napravili nalog sa nivoom pristupa "Admin" ili "Pravo za unos" imaÄ‡ete moguÄ‡nost dodavanja nove Å¡kole, a "Admin" takoÄ‘e moÅ¾e da menja informacije o veÄ‡ postojeÄ‡im Å¡kolama kao i da ih briÅ¡e. 
 
-5. Napravi novu školu
+5. Napravi novu Å¡kolu
 
-- Prilikom dodavanja nove škole, morate popuniti obrazac za kreiranje nove škole. Neophodno je uneti sve bitne podatke, ukoliko to ne uèinite, pojaviæe se poruka koja Vam nalae da to uèinite.
+- Prilikom dodavanja nove Å¡kole, morate popuniti obrazac za kreiranje nove Å¡kole. Neophodno je uneti sve bitne podatke, ukoliko to ne uÄinite, pojaviÄ‡e se poruka koja Vam nalaÅ¾e da to uÄinite.
 
-6. Izmeni - Obriši
+6. Izmeni - ObriÅ¡i
 
-** Izmeni ** Moete menjati informacije o unetim školama klikom na dugme "Izmeni", nakon toga moete izmeniti eljene podatke i saèuvati ih na dugme "Saèuvaj". 
+** Izmeni ** MoÅ¾ete menjati informacije o unetim Å¡kolama klikom na dugme "Izmeni", nakon toga moÅ¾ete izmeniti Å¾eljene podatke i saÄuvati ih na dugme "SaÄuvaj". 
 
-** Obriši ** Takoğe moete i obrisati unete škole, klikom na dugme "Obriši".
+** ObriÅ¡i ** TakoÄ‘e moÅ¾ete i obrisati unete Å¡kole, klikom na dugme "ObriÅ¡i".
 
 
 7. Informacije o kontaktima
 
-- Sada kada ste dodali novu školu, dodatnim informacijama o kontaktima moete pristupiti klikom na naziv eljene škole. Pojaviæe Vam se nova stranica o informacijama u vezi kontakata (zaposlenih) u toj školi, klikom na "Email" i "Telefoni" u sklopu kontakta, moete pristupiti sadraju. 
+- Sada kada ste dodali novu Å¡kolu, dodatnim informacijama o kontaktima moÅ¾ete pristupiti klikom na naziv Å¾eljene Å¡kole. PojaviÄ‡e Vam se nova stranica o informacijama u vezi kontakata (zaposlenih) u toj Å¡koli, klikom na "Email" i "Telefoni" u sklopu kontakta, moÅ¾ete pristupiti sadrÅ¾aju. 
 
 8. Komandna linija
 
-- Tokom rada aplikacije, nebitno na kojoj stranici se nalazite, iznad æe stajati komandna linija tirkizne boje, pomoæu koje æete lako moæi da se kreæete kroz aplikaciju, tu se pored preèice za Listu škola i Vašeg korisnièkog imena, nalazi i preèica za odjavu sa aplikacije. Korisnik sa nivoom pristupa "Admin" æe još imati preèicu "Korisnici" uz pomoæ koje æe moæi da pristupi registrovanim korisnicima aplikacije.
+- Tokom rada aplikacije, nebitno na kojoj stranici se nalazite, iznad Ä‡e stajati komandna linija tirkizne boje, pomoÄ‡u koje Ä‡ete lako moÄ‡i da se kreÄ‡ete kroz aplikaciju, tu se pored preÄice za Listu Å¡kola i VaÅ¡eg korisniÄkog imena, nalazi i preÄica za odjavu sa aplikacije. Korisnik sa nivoom pristupa "Admin" Ä‡e joÅ¡ imati preÄicu "Korisnici" uz pomoÄ‡ koje Ä‡e moÄ‡i da pristupi registrovanim korisnicima aplikacije.
 
 9. Korisnici
 
-- Kao admin, moete da manipulišete veæ postojeæim korisnicima, da menjate njihova prava pristupa, da im resetujete lozinku ili da ih u potpunosti obrišete. Takoğe, moete da kreirate i novog korisnika i da mu po Vašoj volji dodelite šifru i prava pristupa.
+- Kao admin, moÅ¾ete da manipuliÅ¡ete veÄ‡ postojeÄ‡im korisnicima, da menjate njihova prava pristupa, da im resetujete lozinku ili da ih u potpunosti obriÅ¡ete. TakoÄ‘e, moÅ¾ete da kreirate i novog korisnika i da mu po VaÅ¡oj volji dodelite Å¡ifru i prava pristupa.
 
-** Promeni prava korisnika ** Klikom na link, promeni prava korisnika, otvara Vam se stranica na kojoj æete moæi da promenite pravo pristupa za eljenog korisnika, a klikom na dugme "Promeni" da izvršite promenu.
+** Promeni prava korisnika ** Klikom na link, promeni prava korisnika, otvara Vam se stranica na kojoj Ä‡ete moÄ‡i da promenite pravo pristupa za Å¾eljenog korisnika, a klikom na dugme "Promeni" da izvrÅ¡ite promenu.
 
-** Obriši korisnika ** Pojaviæe Vam se nova stranica koja æe Vas upitati da li ste sigurni da zaista elite da obrišete odabranog korisnika, a klikom na dugme, "Obriši" to potvrğujete.
+** ObriÅ¡i korisnika ** PojaviÄ‡e Vam se nova stranica koja Ä‡e Vas upitati da li ste sigurni da zaista Å¾elite da obriÅ¡ete odabranog korisnika, a klikom na dugme, "ObriÅ¡i" to potvrÄ‘ujete.
 
-** Resetuj lozinku korisinika ** Ovde moete resetovati lozinku bilo kog korisnika, unesite dva puta eljenu lozinku, drugi put kako bi je potvrdili, a klikom na dugme "Resetuj", lozinka æe biti resetovana.
+** Resetuj lozinku korisinika ** Ovde moÅ¾ete resetovati lozinku bilo kog korisnika, unesite dva puta Å¾eljenu lozinku, drugi put kako bi je potvrdili, a klikom na dugme "Resetuj", lozinka Ä‡e biti resetovana.
 
 
-### Pomoæ (Help)
+### PomoÄ‡ (Help)
 
 
 - Polazimo od pretpostavke da koristite Microsoft Visual Studio 2017 i imate instalirane sve neophodne dodatke za ASP.NET.
 
-*******Uèestali problemi*******
+*******UÄestali problemi*******
 
 [1]
-Da biste koristili aplikaciju nesmetano, neophodno je da su Vam NuGet Packages(paketi) aurirani. Ukoliko nisu, desnim klikom na ime projekta u "Solution explorer/ProjekatFinalni" kliknite na "Manage NuGet packages" u otvorenom prozoru kliknite na dugme "Browse" i prekopirajte ovaj tekst "Microsoft.CodeDom.Providers.DotNetCompilerPlatform". Skinite ekstenziju koja Vam se pojavila i instalirajte je. Ponovo pokrenite projekat za svaki sluèaj.
+Da biste koristili aplikaciju nesmetano, neophodno je da su Vam NuGet Packages(paketi) aÅ¾urirani. Ukoliko nisu, desnim klikom na ime projekta u "Solution explorer/ProjekatFinalni" kliknite na "Manage NuGet packages" u otvorenom prozoru kliknite na dugme "Browse" i prekopirajte ovaj tekst "Microsoft.CodeDom.Providers.DotNetCompilerPlatform". Skinite ekstenziju koja Vam se pojavila i instalirajte je. Ponovo pokrenite projekat za svaki sluÄaj.
 
 [2]
 Could not find a part of the path '...\bin\roslyn\csc.exe'.
 
-U sluèaju ovog problema, neophodno je da pronadjete fajl sa ektenzijom .csproj i da u njega prekopirate kod ispod.
+U sluÄaju ovog problema, neophodno je da pronadjete fajl sa ektenzijom .csproj i da u njega prekopirate kod ispod.
 
 <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
     <ItemGroup>
@@ -130,7 +130,7 @@ U sluèaju ovog problema, neophodno je da pronadjete fajl sa ektenzijom .csproj i
 
 
 
-- U sluèaju drugih problema kontaktirajte nas mejlom na:
+- U sluÄaju drugih problema kontaktirajte nas mejlom na:
 dusan59517@its.edu.rs 
 
 
@@ -143,10 +143,10 @@ dusan59517@its.edu.rs
 
 ### Projektanti (Project Contributors - Credits)
 
-1. Marina Jevremoviæ - RM
-2. Nikola Jevremoviæ - IT
-3. Dušan Jovièiæ - IT
-4. Aleksandar Vukoviæ - IT
+1. Marina JevremoviÄ‡ - RM
+2. Nikola JevremoviÄ‡ - IT
+3. DuÅ¡an JoviÄiÄ‡ - IT
+4. Aleksandar VukoviÄ‡ - IT
 5. Luka Brdar - IT
 
 ### Kontakt (Contact)
@@ -156,7 +156,7 @@ E-mail: dusan59517@its.edu.rs
 
 ------------------------------------------------------------------------------------
 
-Prosleğene informacije su namenjene iskljuèivo osobama ili entitetima na koje je poruka adresirana. Bilo kakvo širenje informacija, njihovo kopiranje i parafraziranje ili bilo koja druga upotreba ili preduzimanje akcije od strane lica ili entiteta na koje poruka nije adresirana, a vezano za informacije iz poruke i bez izrièite dozvole pošiljaoca se zabranjuje. Pošiljalac nije odgovoran ni za kakav prenos komunikacija, niti za kašnjenje poruke. 
+ProsleÄ‘ene informacije su namenjene iskljuÄivo osobama ili entitetima na koje je poruka adresirana. Bilo kakvo Å¡irenje informacija, njihovo kopiranje i parafraziranje ili bilo koja druga upotreba ili preduzimanje akcije od strane lica ili entiteta na koje poruka nije adresirana, a vezano za informacije iz poruke i bez izriÄite dozvole poÅ¡iljaoca se zabranjuje. PoÅ¡iljalac nije odgovoran ni za kakav prenos komunikacija, niti za kaÅ¡njenje poruke. 
 
 The information transmitted is intended only for the person or entity to which it is addressed. Any review, retransmission, dissemination or other use of, or taking of any action in reliance upon this information by persons or entities other than the intended recipient - without the sender's explicit permission - is prohibited. The sender is neither liable for the proper transmission of this communication nor for any delay in its receipt.
 
