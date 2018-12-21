@@ -17,8 +17,9 @@ namespace ProjekatFinalni.Models
     public partial class Korisnik
     {
         public int KorisnikID { get; set; }
-        [DisplayName("Korisnicko ime:")]
-        [Required(ErrorMessage ="Molimo vas unesite korisnicko ime.")]
+
+        [DisplayName("Korisnièko ime:")]
+        [Required(ErrorMessage ="Molimo vas unesite korisnièko ime.")]
         public string Korisnickoime { get; set; }
 
         [DisplayName("Lozinka:")]

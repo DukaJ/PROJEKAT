@@ -11,12 +11,21 @@ namespace ProjekatFinalni.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Telefon
     {
+        [DisplayName("Broj telefona:")]
         public string BrojTelefona { get; set; }
+
+        [DisplayName("Tip:")]
         public string OznakaTipa { get; set; }
+
+        [DisplayName("Lokal:")]
         public string Lokal { get; set; }
+
+        [DisplayName("Kontakt ID:")]
         public int KontaktID { get; set; }
     
         public virtual Kontakt Kontakt { get; set; }
