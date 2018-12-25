@@ -87,9 +87,10 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Obriši" class="btn btn-default" /> |
-            @Html.ActionLink("Nazad", "Index")
-        </div>
+    <div class="form-actions no-color">
+        @Html.ActionLink("Nazad", "Index") | 
+        <input type="submit" value="Obriši" class="btn btn-default" />
+
+    </div>
     }
 </div>

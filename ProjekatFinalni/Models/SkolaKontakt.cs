@@ -49,7 +49,6 @@ namespace ProjekatFinalni.Models
         [DisplayName("Web stranica:")]
         public string WebStranica { get; set; }
 
-        public byte[] Fotografija { get; set; }
 
         [DisplayName("Beleška:")]
         public string Beleska { get; set; }
@@ -94,8 +93,11 @@ namespace ProjekatFinalni.Models
        
 
         public List<Kontakt> Kontakti { get; set; }
-        
 
+        [DisplayName("Pečat:")]
+        public string Fotografija { get; set; }
+
+        public HttpPostedFileBase SlikaFajl { get; set; }
 
     }
 }

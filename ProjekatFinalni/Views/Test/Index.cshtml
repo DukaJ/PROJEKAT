@@ -7,7 +7,7 @@
     }
 }
 <h2>Dodaj novu školu</h2>
-@using (Html.BeginForm("Index", "Test", FormMethod.Post))
+@using (Html.BeginForm("Index", "Test", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -79,6 +79,13 @@
             @Html.ValidationMessageFor(model => model.Beleska, "", new { @class = "text-danger" })
         </div>
     </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Fotografija, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="SlikaFajl" required />
+        </div>
+    </div>
+
     <h4>Dodaj kontakt</h4>
     <div class="form-group">
         @Html.LabelFor(model => model.Ime, htmlAttributes: new { @class = "control-label col-md-2" })

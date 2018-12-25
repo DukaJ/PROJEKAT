@@ -16,21 +16,18 @@ namespace ProjekatFinalni.Models
 
     public partial class MailAdresa
     {
-
         [DisplayName("Adresa:")]
         [Required(ErrorMessage = "Molimo vas unesite Email adresu.")]
         public string Adresa { get; set; }
- 
+
 
         [DisplayName("Tip:")]
         [Required(ErrorMessage = "Molimo vas unesite tip.")]
         public string OznakaTipaMail { get; set; }
-      
 
         [DisplayName("Kontakt ID:")]
         public int KontaktID { get; set; }
- 
-
+    
         public virtual Kontakt Kontakt { get; set; }
     }
 }

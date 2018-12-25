@@ -17,17 +17,20 @@ namespace ProjekatFinalni.Models
     public partial class Telefon
     {
         [DisplayName("Broj telefona:")]
+        [Required(ErrorMessage = "Molimo vas unesite broj telefona.")]
         public string BrojTelefona { get; set; }
 
         [DisplayName("Tip:")]
+        [Required(ErrorMessage = "Molimo vas unesite tip.")]
         public string OznakaTipa { get; set; }
 
         [DisplayName("Lokal:")]
+        [Required(ErrorMessage = "Molimo vas unesite lokal.")]
         public string Lokal { get; set; }
 
         [DisplayName("Kontakt ID:")]
         public int KontaktID { get; set; }
-    
+
         public virtual Kontakt Kontakt { get; set; }
     }
 }

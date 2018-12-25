@@ -44,54 +44,61 @@
         <th>
             @Html.DisplayNameFor(model => model.Beleska)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fotografija)
+        </th>
+        <th>
+        </th>
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.ActionLink(item.NazivSkole, "Index", "Kontakt", new { skolaid = item.SkolaID }, null)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AdresaRegistracije)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Opstina)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PostanskiBroj)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaticniBrojSkole)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PIB)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BrojRacunaSkole)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WebStranica)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Beleska)
-            </td>
-            <td>
-                @{
-                    if (admin == "True" || pravounosa == "True")
-                    {
-                        @Html.ActionLink("Izmeni", "Edit", new { id = item.SkolaID }) 
+    <tr>
+        <td>
+            @Html.ActionLink(item.NazivSkole, "Index", "Kontakt", new { skolaid = item.SkolaID }, null)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdresaRegistracije)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opstina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostanskiBroj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaticniBrojSkole)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PIB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrojRacunaSkole)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WebStranica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Beleska)
+        </td>
+        <td>
+            <img src="@Url.Content(item.Fotografija)" width="60" height="60" />
+        </td>
+        <td>
+            @{
+                if (admin == "True" || pravounosa == "True")
+                {
+                    @Html.ActionLink("Izmeni", "Edit", new { id = item.SkolaID })
 
-                    }
                 }
-                @{
-                    if (admin == "True")
-                    {
-                        @Html.ActionLink("Obriši", "Delete", new { id = item.SkolaID })
-                    }
+            }
+            @{
+                if (admin == "True")
+                {
+                    @Html.ActionLink("Obriši", "Delete", new { id = item.SkolaID })
                 }
-            </td>
-        </tr>
+            }
+        </td>
+    </tr>
 
 
     }

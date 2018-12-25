@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -36,8 +37,15 @@ namespace ProjekatFinalni.Controllers
                 s.WebStranica = skolica1.WebStranica;
                 //s.Fotografija = skolica1.Fotografija;
                 s.Beleska = skolica1.Beleska;
+                string fileName = Path.GetFileNameWithoutExtension(skolica1.SlikaFajl.FileName);
+                string ext = Path.GetExtension(skolica1.SlikaFajl.FileName);
+                fileName = fileName + DateTime.Now.ToString("yymmssfff") + ext;
+                skolica1.Fotografija = "~/Slike/" + fileName;
+                s.Fotografija = skolica1.Fotografija;
+                fileName = Path.Combine(Server.MapPath("~/Slike/"), fileName);
+                skolica1.SlikaFajl.SaveAs(fileName);
 
-                bazaSkola.Skola.Add(s);
+                bazaSkola.Skolas.Add(s);
                 bazaSkola.SaveChanges();
                 int poslednjaskola = s.SkolaID;
 
@@ -48,7 +56,7 @@ namespace ProjekatFinalni.Controllers
                 k.RadnoMesto = skolica1.RadnoMesto;
                 k.SkolaID = poslednjaskola;
 
-                bazaSkola.Kontakt.Add(k);
+                bazaSkola.Kontakts.Add(k);
                 bazaSkola.SaveChanges();
                 int poslednjikontakt = k.KontaktID;
 
@@ -59,7 +67,7 @@ namespace ProjekatFinalni.Controllers
                 t.Lokal = skolica1.Lokal;
                 t.KontaktID = poslednjikontakt;
 
-                bazaSkola.Telefon.Add(t);
+                bazaSkola.Telefons.Add(t);
                 bazaSkola.SaveChanges();
 
                 MailAdresa m = new MailAdresa();
@@ -67,7 +75,7 @@ namespace ProjekatFinalni.Controllers
                 m.OznakaTipaMail = skolica1.OznakaTipaMail;
                 m.KontaktID = poslednjikontakt;
 
-                bazaSkola.MailAdresa.Add(m);
+                bazaSkola.MailAdresas.Add(m);
                 bazaSkola.SaveChanges();
 
                 return RedirectToAction("Index", "Skola");

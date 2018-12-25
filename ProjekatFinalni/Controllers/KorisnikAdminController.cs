@@ -35,7 +35,7 @@ namespace ProjekatFinalni.Controllers
                 if (Modelkorisnik.Korisniks.Any(x => x.Korisnickoime == korisnikmodel.Korisnickoime))
                 {
                     ViewBag.DuplicateMessage = "Korisničko ime već postoji.";
-                    return View("Index", korisnikmodel);
+                    return View("Dodaj", korisnikmodel);
                 }
                 Modelkorisnik.Korisniks.Add(korisnikmodel);
                 Modelkorisnik.SaveChanges();

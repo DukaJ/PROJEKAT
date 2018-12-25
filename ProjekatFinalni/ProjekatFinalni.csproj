@@ -242,7 +242,7 @@
       <DependentUpon>BazaSkola.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SkolaKontakt.cs" />
-    <Compile Include="Models\sysdiagrams.cs">
+    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>BazaSkola.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Telefon.cs">
@@ -284,13 +284,6 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\BazaSkola.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BazaSkola.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\BazaSkola.edmx.diagram">
-      <DependentUpon>BazaSkola.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Models\Korisnik.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Korisnik.Designer.cs</LastGenOutput>
@@ -299,6 +292,13 @@
       <DependentUpon>Korisnik.edmx</DependentUpon>
     </Content>
     <Content Include="App_Browsers\qt.browser" />
+    <EntityDeploy Include="Models\BazaSkola.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BazaSkola.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BazaSkola.edmx.diagram">
+      <DependentUpon>BazaSkola.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\CustomJs.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -369,7 +369,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\HtmlNas\" />
+    <Folder Include="Slike\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

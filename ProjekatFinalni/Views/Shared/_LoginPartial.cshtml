@@ -2,8 +2,8 @@
 {
 
 <ul class="nav navbar-nav navbar-right">
-    <li>Korisnik:@Session["korisnikIme"].ToString()</li>
-    <li>@Html.ActionLink("Lista škola","Index","Skola")</li>
+    <li><p>Korisnik: @Session["korisnikIme"].ToString()</p></li>
+    <li>@Html.ActionLink("Lista škola", "Index", "Skola")</li>
     @{
         string admin = Session["Admin"].ToString();
 

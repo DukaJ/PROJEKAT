@@ -13,46 +13,47 @@ namespace ProjekatFinalni.Models
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
+    using System.Web;
 
     public partial class Skola
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Skola()
         {
-            this.Kontakt = new HashSet<Kontakt>();
+            this.Kontakts = new HashSet<Kontakt>();
         }
-    
+        [DisplayName("Škola ID:")]
         public int SkolaID { get; set; }
 
         [DisplayName("Naziv škole:")]
         [Required(ErrorMessage = "Molimo vas unesite naziv škole.")]
         public string NazivSkole { get; set; }
-       
+
 
         [DisplayName("Adresa registracije:")]
         [Required(ErrorMessage = "Molimo vas unesite adresu registracije.")]
         public string AdresaRegistracije { get; set; }
-      
+
 
         [DisplayName("Opština:")]
         [Required(ErrorMessage = "Molimo vas unesite ime opštine.")]
         public string Opstina { get; set; }
-       
+
 
         [DisplayName("Poštanski broj:")]
         [Required(ErrorMessage = "Molimo vas unesite poštanski broj.")]
         public Nullable<int> PostanskiBroj { get; set; }
-       
+
 
         [DisplayName("Matièni broj škole:")]
         [Required(ErrorMessage = "Molimo vas unesite matièni broj škole")]
         public string MaticniBrojSkole { get; set; }
-      
+
 
         [DisplayName("PIB:")]
         [Required(ErrorMessage = "Molimo vas unesite PIB.")]
         public string PIB { get; set; }
-       
+
 
         [DisplayName("Broj raèuna škole:")]
         [Required(ErrorMessage = "Molimo vas unesite broj raèuna škole.")]
@@ -61,14 +62,17 @@ namespace ProjekatFinalni.Models
 
         [DisplayName("Web stranica:")]
         public string WebStranica { get; set; }
-     
-        public byte[] Fotografija { get; set; }
+
 
         [DisplayName("Beleška:")]
         public string Beleska { get; set; }
-  
+
+        [DisplayName("Peèat:")]
+        public string Fotografija { get; set; }
+
+        public HttpPostedFileBase SlikaFajl { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Kontakt> Kontakt { get; set; }
+        public virtual ICollection<Kontakt> Kontakts { get; set; }
     }
 }

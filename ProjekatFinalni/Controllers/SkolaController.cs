@@ -15,7 +15,7 @@ namespace ProjekatFinalni.Controllers
         public ActionResult Index()
         {
             BazaProjekatEntities KontakiBaza = new BazaProjekatEntities();
-            List<Skola> skole = KontakiBaza.Skola.ToList();
+            List<Skola> skole = KontakiBaza.Skolas.ToList();
             return View(skole);
         }
 
@@ -25,16 +25,42 @@ namespace ProjekatFinalni.Controllers
         {
             using (BazaProjekatEntities dbModel = new BazaProjekatEntities())
             {
-                return View(dbModel.Skola.Where(x => x.SkolaID == id).FirstOrDefault());
+                var skola = dbModel.Skolas.Where(x => x.SkolaID == id).FirstOrDefault();
+                var vm = new SkolaKontakt { SkolaID = id };
+                vm.NazivSkole = skola.NazivSkole;
+                vm.AdresaRegistracije = skola.AdresaRegistracije;
+                vm.Opstina = skola.Opstina;
+                vm.PostanskiBroj = skola.PostanskiBroj;
+                vm.MaticniBrojSkole = skola.MaticniBrojSkole;
+                vm.PIB = skola.PIB;
+                vm.BrojRacunaSkole = skola.BrojRacunaSkole;
+                vm.WebStranica = skola.WebStranica;
+                vm.Fotografija = skola.Fotografija;
+                return View(vm);
             }
         }
         [HttpPost]
-        public ActionResult Edit(int id, Skola s)
+        public ActionResult Edit(SkolaKontakt spom)
         {
             try
             {
                 using (BazaProjekatEntities dbModel = new BazaProjekatEntities())
                 {
+                    var s = dbModel.Skolas.FirstOrDefault(x => x.SkolaID == spom.SkolaID);
+                    s.NazivSkole = spom.NazivSkole;
+                    s.AdresaRegistracije = spom.AdresaRegistracije;
+                    s.Opstina = spom.Opstina;
+                    s.PostanskiBroj = spom.PostanskiBroj;
+                    s.MaticniBrojSkole = spom.MaticniBrojSkole;
+                    s.PIB = spom.PIB;
+                    s.BrojRacunaSkole = spom.BrojRacunaSkole;
+                    s.WebStranica = spom.WebStranica;
+
+                    s.Beleska = spom.Beleska;
+
+                    s.Fotografija = spom.Fotografija;
+
+
                     dbModel.Entry(s).State = EntityState.Modified;
                     dbModel.SaveChanges();
                 }
@@ -50,7 +76,7 @@ namespace ProjekatFinalni.Controllers
         {
             using (BazaProjekatEntities dbModel = new BazaProjekatEntities())
             {
-                return View(dbModel.Skola.Where(x => x.SkolaID == id).FirstOrDefault());
+                return View(dbModel.Skolas.Where(x => x.SkolaID == id).FirstOrDefault());
             }
         }
 
@@ -62,18 +88,18 @@ namespace ProjekatFinalni.Controllers
                 using (BazaProjekatEntities dbModel = new BazaProjekatEntities())
                 {
 
-                    Skola skola = dbModel.Skola.Where(x => x.SkolaID == id).FirstOrDefault();
+                    Skola skola = dbModel.Skolas.Where(x => x.SkolaID == id).FirstOrDefault();
 
 
-                    foreach (var k2 in dbModel.Kontakt.Where(x => x.SkolaID == id).ToList())
+                    foreach (var k2 in dbModel.Kontakts.Where(x => x.SkolaID == id).ToList())
                     {
-                        dbModel.MailAdresa.RemoveRange(k2.MailAdresa);
-                        dbModel.Telefon.RemoveRange(k2.Telefon);
+                        dbModel.MailAdresas.RemoveRange(k2.MailAdresas);
+                        dbModel.Telefons.RemoveRange(k2.Telefons);
                     }
 
-                    var Kontakt = dbModel.Kontakt.Where(x => x.SkolaID == skola.SkolaID);
-                    dbModel.Kontakt.RemoveRange(Kontakt);
-                    dbModel.Skola.Remove(skola);
+                    var Kontakt = dbModel.Kontakts.Where(x => x.SkolaID == skola.SkolaID);
+                    dbModel.Kontakts.RemoveRange(Kontakt);
+                    dbModel.Skolas.Remove(skola);
                     dbModel.SaveChanges();
                 }
                 return RedirectToAction("Index");

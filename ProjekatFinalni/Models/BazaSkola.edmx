@@ -36,8 +36,8 @@
           <Property Name="PIB" Type="varchar" MaxLength="50" />
           <Property Name="BrojRacunaSkole" Type="varchar" MaxLength="50" />
           <Property Name="WebStranica" Type="varchar" MaxLength="50" />
-          <Property Name="Fotografija" Type="image" />
           <Property Name="Beleska" Type="varchar" MaxLength="50" />
+          <Property Name="Fotografija" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -128,8 +128,8 @@
           <Property Name="SkolaID" Type="Int32" Nullable="false" />
           <Property Name="KontaktID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Skola" Relationship="Self.FK_Kontakt_Skola" FromRole="Kontakt" ToRole="Skola" />
-          <NavigationProperty Name="MailAdresa" Relationship="Self.FK_MailAdresa_Kontakt" FromRole="Kontakt" ToRole="MailAdresa" />
-          <NavigationProperty Name="Telefon" Relationship="Self.FK_Telefon_Kontakt" FromRole="Kontakt" ToRole="Telefon" />
+          <NavigationProperty Name="MailAdresas" Relationship="Self.FK_MailAdresa_Kontakt" FromRole="Kontakt" ToRole="MailAdresa" />
+          <NavigationProperty Name="Telefons" Relationship="Self.FK_Telefon_Kontakt" FromRole="Kontakt" ToRole="Telefon" />
         </EntityType>
         <EntityType Name="MailAdresa">
           <Key>
@@ -153,11 +153,11 @@
           <Property Name="PIB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="BrojRacunaSkole" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="WebStranica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Fotografija" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Beleska" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Kontakt" Relationship="Self.FK_Kontakt_Skola" FromRole="Skola" ToRole="Kontakt" />
+          <Property Name="Fotografija" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kontakts" Relationship="Self.FK_Kontakt_Skola" FromRole="Skola" ToRole="Kontakt" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
+        <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
@@ -214,22 +214,22 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="BazaProjekatEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Kontakt" EntityType="Self.Kontakt" />
-          <EntitySet Name="MailAdresa" EntityType="Self.MailAdresa" />
-          <EntitySet Name="Skola" EntityType="Self.Skola" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <EntitySet Name="Telefon" EntityType="Self.Telefon" />
+          <EntitySet Name="Kontakts" EntityType="Self.Kontakt" />
+          <EntitySet Name="MailAdresas" EntityType="Self.MailAdresa" />
+          <EntitySet Name="Skolas" EntityType="Self.Skola" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Telefons" EntityType="Self.Telefon" />
           <AssociationSet Name="FK_Kontakt_Skola" Association="Self.FK_Kontakt_Skola">
-            <End Role="Skola" EntitySet="Skola" />
-            <End Role="Kontakt" EntitySet="Kontakt" />
+            <End Role="Skola" EntitySet="Skolas" />
+            <End Role="Kontakt" EntitySet="Kontakts" />
           </AssociationSet>
           <AssociationSet Name="FK_MailAdresa_Kontakt" Association="Self.FK_MailAdresa_Kontakt">
-            <End Role="Kontakt" EntitySet="Kontakt" />
-            <End Role="MailAdresa" EntitySet="MailAdresa" />
+            <End Role="Kontakt" EntitySet="Kontakts" />
+            <End Role="MailAdresa" EntitySet="MailAdresas" />
           </AssociationSet>
           <AssociationSet Name="FK_Telefon_Kontakt" Association="Self.FK_Telefon_Kontakt">
-            <End Role="Kontakt" EntitySet="Kontakt" />
-            <End Role="Telefon" EntitySet="Telefon" />
+            <End Role="Kontakt" EntitySet="Kontakts" />
+            <End Role="Telefon" EntitySet="Telefons" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -238,7 +238,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="BazaProjekatModelStoreContainer" CdmEntityContainer="BazaProjekatEntities">
-          <EntitySetMapping Name="Kontakt">
+          <EntitySetMapping Name="Kontakts">
             <EntityTypeMapping TypeName="BazaProjekatModel.Kontakt">
               <MappingFragment StoreEntitySet="Kontakt">
                 <ScalarProperty Name="Ime" ColumnName="Ime" />
@@ -249,7 +249,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MailAdresa">
+          <EntitySetMapping Name="MailAdresas">
             <EntityTypeMapping TypeName="BazaProjekatModel.MailAdresa">
               <MappingFragment StoreEntitySet="MailAdresa">
                 <ScalarProperty Name="Adresa" ColumnName="Adresa" />
@@ -258,7 +258,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Skola">
+          <EntitySetMapping Name="Skolas">
             <EntityTypeMapping TypeName="BazaProjekatModel.Skola">
               <MappingFragment StoreEntitySet="Skola">
                 <ScalarProperty Name="SkolaID" ColumnName="SkolaID" />
@@ -270,13 +270,13 @@
                 <ScalarProperty Name="PIB" ColumnName="PIB" />
                 <ScalarProperty Name="BrojRacunaSkole" ColumnName="BrojRacunaSkole" />
                 <ScalarProperty Name="WebStranica" ColumnName="WebStranica" />
-                <ScalarProperty Name="Fotografija" ColumnName="Fotografija" />
                 <ScalarProperty Name="Beleska" ColumnName="Beleska" />
+                <ScalarProperty Name="Fotografija" ColumnName="Fotografija" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="BazaProjekatModel.sysdiagrams">
+            <EntityTypeMapping TypeName="BazaProjekatModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -286,7 +286,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Telefon">
+          <EntitySetMapping Name="Telefons">
             <EntityTypeMapping TypeName="BazaProjekatModel.Telefon">
               <MappingFragment StoreEntitySet="Telefon">
                 <ScalarProperty Name="BrojTelefona" ColumnName="BrojTelefona" />
@@ -310,7 +310,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

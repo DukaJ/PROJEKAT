@@ -3,9 +3,7 @@
     ViewBag.Title = "Index";
 }
 <h2>Kontakt</h2>
-<p>
-    @Html.ActionLink("Dodaj novi", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -49,10 +47,8 @@
             <td>
                 @Html.ActionLink("Telefoni", "Index", "Telefoni", new { tkontaktid = item.KontaktID }, null)
             </td>
-            <td>
-                @Html.ActionLink("Izmeni", "Edit", new { id = item.KontaktID }) |
-                @Html.ActionLink("Obriši", "Delete", new { id = item.KontaktID })
-            </td>
+           
+           
         </tr>
 
     }

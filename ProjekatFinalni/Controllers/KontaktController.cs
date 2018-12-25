@@ -13,7 +13,7 @@ namespace ProjekatFinalni.Controllers
         public ActionResult Index(int skolaid)
         {
             BazaProjekatEntities bazaKontakt = new BazaProjekatEntities();
-            List<Kontakt> kontakti = bazaKontakt.Kontakt.Where(x => x.SkolaID == skolaid).ToList();
+            List<Kontakt> kontakti = bazaKontakt.Kontakts.Where(x => x.SkolaID == skolaid).ToList();
             return View(kontakti);
         }
     }

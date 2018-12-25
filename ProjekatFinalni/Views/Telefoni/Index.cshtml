@@ -7,9 +7,7 @@
 
 <h2>Telefoni</h2>
 
-<p>
-    @Html.ActionLink("Dodaj novi", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -42,10 +40,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.KontaktID)
             </td>
-            <td>
-                @Html.ActionLink("Izmeni", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Obriši", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+         
         </tr>
       
     }
