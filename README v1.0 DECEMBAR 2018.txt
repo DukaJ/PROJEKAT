@@ -1,6 +1,20 @@
 ***************************************************************
-README v1.0 / DECEMBAR 2018.
+README v1.1 / DECEMBAR 2018.
 ***************************************************************
+## VERZIJA 1.1
+
+**Modifikacije**
+
+*-* Modifikovana baza podataka, dodat prostor za skladištenje fotografija peèata.
+
+*-* Rešen problem brisanja škola.
+
+*-* Izmenjen izgled stranice za registraciju.
+
+*-* Omoguæeno dodavanje peèata prilikom kreiranja nove škole i njegov prikaz na stranici "Lista škola".
+
+*-* Izmenjen prikaz korisnika.
+
 
 # Projekat škola
 
